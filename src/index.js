@@ -6,7 +6,9 @@ const locks = {
   shift: false,
   singleText: false,
   prevKey: false,
-  spaceLock: false
+  spaceLock: false,
+  enter: false,
+  tab: false
 };
 
 let prevKey = '';
@@ -17,6 +19,7 @@ let shiftMode = false;
 let mode = '';
 let lTrigger = false;
 let rTrigger = false;
+let rBumper = false;
 
 let modeTriggers = ['D_PAD_LEFT', 'D_PAD_RIGHT', 'D_PAD_DOWN', 'D_PAD_UP'];
 let inputTriggers = ['A', 'B', 'Y', 'X'];
@@ -24,6 +27,8 @@ let inputTriggers = ['A', 'B', 'Y', 'X'];
 let lTriggerTimer;
 let modeTimer;
 let rTriggerTimer;
+
+let rBumperTimer;
 
 (async () => {
     const gameController = new GameController();
@@ -44,7 +49,7 @@ let rTriggerTimer;
         return;
       }
 
-      if (input === 'A' && !mode.length && !locks.singleText) {
+      if (input === 'A' && !mode.length && !locks.singleText && rBumper) {
         bot.mouseClick();
         return;
       }
@@ -53,6 +58,22 @@ let rTriggerTimer;
         bot.keyTap('backspace');
         locks.singleText = true;
         setTimeout(() => {locks.singleText = false}, 50);
+
+        return;
+      }
+
+      if (input === 'Y' && !mode.length && !locks.enter && rTrigger) {
+        bot.keyTap('enter');
+        locks.enter = true;
+        setTimeout(() => {locks.enter = false}, 100);
+
+        return;
+      }
+
+      if (input === 'X' && !mode.length && !locks.tab && rTrigger) {
+        bot.keyTap('tab');
+        locks.tab = true;
+        setTimeout(() => {locks.tab = false}, 100);
 
         return;
       }
@@ -109,6 +130,18 @@ let rTriggerTimer;
         rTriggerTimer = setTimeout(() => {
           rTrigger = false;
         }, 50, 'r-trigger-mode');
+        return;
+      }
+
+      if (input === 'BUMPER_RIGHT') {
+        rBumper = true;
+        if (rBumperTimer) {
+          clearTimeout(rBumperTimer);
+        }
+
+        rBumperTimer = setTimeout(() => {
+          rBumper = false;
+        }, 50, 'l-bumper-mode');
         return;
       }
 
