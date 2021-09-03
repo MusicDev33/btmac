@@ -1,0 +1,20 @@
+{
+  "0": "B",
+  "1": "A",
+  "2": "Y",
+  "3": "X",
+  "4": "BUMPER_LEFT",
+  "5": "BUMPER_RIGHT",
+  "6": "TRIGGER_LEFT",
+  "7": "TRIGGER_RIGHT",
+  "8": "MINUS",
+  "9": "PLUS",
+  "10": "THUMBSTICK_L_CLICK",
+  "11": "THUMBSTICK_R_CLICK",
+  "12": "D_PAD_UP",
+  "13": "D_PAD_DOWN",
+  "14": "D_PAD_LEFT",
+  "15": "D_PAD_RIGHT",
+  "16": "HOME",
+  "17": "CAPTURE"
+}

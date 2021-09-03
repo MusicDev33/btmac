@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "node-ble": "^1.5.0",
+    "puppeteer": "^10.2.0",
+    "robotjs": "^0.6.0"
+  },
+  "name": "btmac",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

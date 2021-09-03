@@ -1,0 +1,30 @@
+const keyMap = {
+  'up-a': 'a',
+  'up-b': 'b',
+  'up-y': 'c',
+  'up-x': 'd',
+  'right-a': 'e',
+  'right-b': 'f',
+  'right-y': 'g',
+  'right-x': 'h',
+  'down-a': 'i',
+  'down-b': 'j',
+  'down-y': 'k',
+  'down-x': 'l',
+  'left-a': 'm',
+  'left-b': 'n',
+  'left-y': 'o',
+  'left-x': 'p',
+  'lt-up-a': 'q',
+  'lt-up-b': 'r',
+  'lt-up-y': 's',
+  'lt-up-x': 't',
+  'lt-right-a': 'u',
+  'lt-right-b': 'v',
+  'lt-right-y': 'w',
+  'lt-right-x': 'x',
+  'lt-down-a': 'y',
+  'lt-down-b': 'z'
+}
+
+module.exports = keyMap;
